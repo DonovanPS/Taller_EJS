@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+/*Estilos NavBar*/
+.navbar.bg-body-tertiary {
+    background-color: #ededed !important; 
+  }
+
+    .navbar-nav {
+      width: 100%;
+      display: flex;
+      padding: 0; 
+      justify-content: center; 
+    }
+  
+    .navbar-nav .nav-item {
+      text-align: center;
+      margin: 0 5px; 
+    }
+  
+    .navbar-nav .nav-item:nth-child(1) {
+      margin-right: 80px;
+    }
+  
+    .navbar-nav .nav-item:nth-child(2) {
+      margin-left: 140px;
+      margin-right: 140px;
+    }
+  
+    .navbar-nav .nav-item:nth-child(3) {
+      margin-left: 80px;
+    }
+
+    .navbar-nav .nav-link .fas {
+        color: #f68897;
+      }
+
+      .navbar-nav .nav-link {
+        color: #0e0d0d;
+      }
+
+
+      .navbar-brand img {
+        width: 100px; 
+        height: auto; 
+      }
+
+      
+.custom-btn {
+  background-color: #ffa1ae; 
+  color: black;
+  border-radius: 4px;
+}
+
+.custom-btn:hover {
+  background-color: #ededed;
+  color: #ffa1ae;
+}
+  
+  
+
