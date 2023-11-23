@@ -1,17 +1,26 @@
 const router = require('express').Router();
 
-const path = require('path');
+const { findAll } = require('../controllers/products');
 
 router.get("/", (req, res) => {
     res.render('index', { title: "Gestión de Productos"});
 });
 
-router.get("/product", (req, res) => {
-    res.render('productos', { title: "Productos" });
-});
 
-router.get("/insertProduct", (req, res) => {
-    res.render('formProduct', { title: "Agregar Productos" });
+
+
+router.get("/product", (req, res) => {
+    try {
+        // Llamada a la función findAll del controlador
+        const productsData = findAll();
+
+       
+        // Renderiza la vista 'products' y pasa los datos de productos
+        res.render('products', { title: "Productos", data: productsData.data });
+    } catch (error) {
+        // Manejo de errores, por ejemplo, redirigir a una página de error
+        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+    }
 });
 
 
