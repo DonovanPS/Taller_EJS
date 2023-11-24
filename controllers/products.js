@@ -31,4 +31,32 @@ module.exports = {
             return { "state": "false", "error": error };
         }
     },
+    update: (product) => {
+        try {
+            const data = fs.readFileSync(filePath, 'utf-8');
+            const products = JSON.parse(data);
+
+            const index = products.findIndex((p) => p.ID === product.ID);
+            products[index] = product;
+
+            fs.writeFileSync(filePath, JSON.stringify(products, null, 2), 'utf-8');
+            return { "state": "true", "data": products };
+        } catch (error) {
+            return { "state": "false", "error": error };
+        }
+    },
+    deleteID: (id) => {
+        try {
+            const data = fs.readFileSync(filePath, 'utf-8');
+            const products = JSON.parse(data);
+
+            const index = products.findIndex((p) => p.ID === id);
+            products.splice(index, 1);
+
+            fs.writeFileSync(filePath, JSON.stringify(products, null, 2), 'utf-8');
+            return { "state": "true", "data": products };
+        } catch (error) {
+            return { "state": "false", "error": error };
+        }
+    }
 };

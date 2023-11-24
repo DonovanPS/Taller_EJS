@@ -1,19 +1,56 @@
-<!-- partials/product-table.ejs -->
-<tbody>
-    <% for (let i = 0; i < data.length; i++) { %>
+<table id="miTabla" class="table">
+    <thead>
         <tr>
-            <td><%= data[i].ID %></td>
-            <td><%= data[i].Nombre %></td>
-            <td><%= data[i].Descripcion %></td>
-            <td><%= data[i].Categoria %></td>
-            <td><%= data[i].Cantidad %></td>
-            <td><%= data[i].Precio %></td>
-            <td><i class="bi bi-pencil"></i></td>
+            <% Object.keys(data[0]).forEach(function(columnName) { %>
+            <th scope="col"><%= columnName %></th>
+            <% }); %>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(function(row) { %>
+        <tr>
+            <% Object.values(row).forEach(function(value) { %>
+            <td><%= value %></td>
+            <% }); %>
             <td>
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-info" onclick='editRow(<%- JSON.stringify(row) %>)'>
+                    <i class="bi bi-pencil"></i>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick='deteleRow(<%- JSON.stringify(row.ID) %>)''>
                     <i class="bi bi-trash"></i>
                 </button>
             </td>
         </tr>
-    <% } %>
-</tbody>
+        <% }); %>
+    </tbody>
+</table>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#miTabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            },
+            pageLength: 5,
+            lengthMenu: [5, 10, 25],
+            "order": [],
+            "columnDefs": [{
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                },{
+                    "targets": [-2, -1], 
+                    "orderable": false
+                }
+            ],
+
+
+        });
+    });
+</script>

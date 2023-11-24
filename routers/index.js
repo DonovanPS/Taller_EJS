@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { findAll, save } = require('../controllers/products');
+const { findAll, save, update, deleteID } = require('../controllers/products');
 
 router.get("/", (req, res) => {
     res.render('index', { title: "Gestión de Productos"});
@@ -14,7 +14,6 @@ router.get("/product", (req, res) => {
         
         const productsData = findAll();
 
-       
         
         res.render('products', { title: "Productos", data: productsData.data });
     } catch (error) {
@@ -24,14 +23,13 @@ router.get("/product", (req, res) => {
 });
 
 
-router.get("/products", (req, res) => {
-    try {
-        const productsData = findAll();
-        res.render('templates/table', { layout: false, data: productsData.data });
-    } catch (error) {
-        res.status(500).json({ error: "Error al obtener datos de productos" });
-    }
+
+router.get("/product/form", (req, res) => {
+    res.render('formProduct', { title: "Formulario de Ventas"});
 });
+
+
+
 
 
 
@@ -62,6 +60,53 @@ router.post("/product", (req, res) => {
 });
 
 
+router.put("/product", (req, res) => {
+
+    try {
+        
+        const productsData = req.body;
+
+        // Validar la data antes de llamar a la función save
+        const validationResult = isValidProduct(productsData);
+
+        if (validationResult.isValid) {
+            const saveResult = update(productsData);
+
+            if (saveResult.state === "true") {
+                res.render('products', { title: "Productos", data: saveResult.data });
+            } else {
+                res.render('error', { title: "Error", error: saveResult.error });
+            }
+        } else {
+            console.log(validationResult.error);
+            //res.render('error', { title: "Error de validación", error: validationResult.error });
+        }
+    } catch (error) {
+        // Manejo de errores, por ejemplo, redirigir a una página de error
+        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+    }
+   
+});
+
+router.delete("/product", (req, res) => {
+    try {
+       
+        const ID = req.body;
+
+        
+        const deleteResult = deleteID(ID);
+
+        if (deleteResult.state === "true") {
+            res.render('products', { title: "Productos", data: deleteResult.data });
+        } else {
+            res.render('error', { title: "Error", error: deleteResult.error });
+        }
+
+    } catch (error) {
+        // Manejo de errores, por ejemplo, redirigir a una página de error
+        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+    }
+});
 
 
 const isValidProduct = (product) => {

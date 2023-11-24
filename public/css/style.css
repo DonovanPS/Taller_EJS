@@ -60,3 +60,24 @@ body{
   
   
 
+/*Estilos table*/
+
+#miTabla_wrapper {
+  font-size: 14px;
+}
+
+#miTabla th, #miTabla td {
+  padding: 10px;
+}
+
+#miTabla_paginate .paginate_button {
+  margin: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#miTabla_paginate .paginate_button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
