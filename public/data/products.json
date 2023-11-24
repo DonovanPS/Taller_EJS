@@ -1,42 +1,42 @@
 [
-    {
-        "ID": 1,
-        "Nombre": "Crema Hidratante de Lujo",
-        "Cantidad": 100,
-        "Precio": 25.99,
-        "Descripcion": "Una lujosa crema hidratante para una piel suave como la seda.",
-        "Categoria": "Cuidado de la Piel"
-    },
-    {
-        "ID": 2,
-        "Nombre": "Base de Maquillaje Radiante",
-        "Cantidad": 50,
-        "Precio": 29.99,
-        "Descripcion": "Logra un cutis natural y radiante con esta base de maquillaje.",
-        "Categoria": "Maquillaje"
-    },
-    {
-        "ID": 3,
-        "Nombre": "Serum Revitalizante para el Cabello",
-        "Cantidad": 75,
-        "Precio": 18.50,
-        "Descripcion": "Serum nutritivo para un cabello brillante y revitalizado.",
-        "Categoria": "Cuidado del Cabello"
-    },
-    {
-        "ID": 4,
-        "Nombre": "Loción Corporal Calmante de Lavanda",
-        "Cantidad": 80,
-        "Precio": 14.99,
-        "Descripcion": "Loción corporal suave con el relajante aroma de la lavanda.",
-        "Categoria": "Cuidado Corporal"
-    },
-    {
-        "ID": 5,
-        "Nombre": "Set de Aromaterapia con Aceites Esenciales",
-        "Cantidad": 20,
-        "Precio": 32.50,
-        "Descripcion": "Un set de aceites esenciales para una experiencia relajante de aromaterapia.",
-        "Categoria": "Bienestar"
-    }
+  {
+    "ID": 1,
+    "Nombre": "Crema Hidratante de Lujo",
+    "Cantidad": 100,
+    "Precio": 25.99,
+    "Descripcion": "Una lujosa crema hidratante para una piel suave como la seda.",
+    "Categoria": "Cuidado de la Piel"
+  },
+  {
+    "ID": 2,
+    "Nombre": "Base de Maquillaje Radiante",
+    "Cantidad": 50,
+    "Precio": 29.99,
+    "Descripcion": "Logra un cutis natural y radiante con esta base de maquillaje.",
+    "Categoria": "Maquillaje"
+  },
+  {
+    "ID": 3,
+    "Nombre": "Serum Revitalizante para el Cabello",
+    "Cantidad": 75,
+    "Precio": 18.5,
+    "Descripcion": "Serum nutritivo para un cabello brillante y revitalizado.",
+    "Categoria": "Cuidado del Cabello"
+  },
+  {
+    "ID": 4,
+    "Nombre": "Loción Corporal Calmante de Lavanda",
+    "Cantidad": 80,
+    "Precio": 14.99,
+    "Descripcion": "Loción corporal suave con el relajante aroma de la lavanda.",
+    "Categoria": "Cuidado Corporal"
+  },
+  {
+    "ID": 5,
+    "Nombre": "Set de Aromaterapia con Aceites Esenciales",
+    "Cantidad": 20,
+    "Precio": 32.5,
+    "Descripcion": "Un set de aceites esenciales para una experiencia relajante de aromaterapia.",
+    "Categoria": "Bienestar"
+  }
 ]

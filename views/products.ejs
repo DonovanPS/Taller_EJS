@@ -37,10 +37,10 @@
                             <td><%= data[i].Categoria %></td>
                             <td><%= data[i].Cantidad %></td>
                             <td><%= data[i].Precio %></td>
-                            
-                            <td><i class="bi bi-pencil" ></i></td>
+
+                            <td><i class="bi bi-pencil"></i></td>
                             <td>
-                                <button type="button" class="btn btn-danger"  %>'">
+                                <button type="button" class="btn btn-danger" %>'">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </td>
@@ -56,10 +56,7 @@
                     Agregar nuevo producto
                 </button>
 
-
-
-
-                <%- include ("templates/popUp.ejs", { modalTitle: 'Título por defecto', modalContent: 'formProduct.ejs' })%>
+                <%- include ("templates/popUp.ejs", { modalTitle: 'Agregar nuevo producto', modalContent: 'formProduct.ejs' , button: 'Guardar', script: 'nombreSccript' })%>
 
 
             </div>
@@ -67,10 +64,9 @@
     </div>
 
 
+    <script src="js/toast.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+
 </body>
 
 </html>

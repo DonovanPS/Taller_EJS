@@ -1,0 +1,19 @@
+<!-- partials/product-table.ejs -->
+<tbody>
+    <% for (let i = 0; i < data.length; i++) { %>
+        <tr>
+            <td><%= data[i].ID %></td>
+            <td><%= data[i].Nombre %></td>
+            <td><%= data[i].Descripcion %></td>
+            <td><%= data[i].Categoria %></td>
+            <td><%= data[i].Cantidad %></td>
+            <td><%= data[i].Precio %></td>
+            <td><i class="bi bi-pencil"></i></td>
+            <td>
+                <button type="button" class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+    <% } %>
+</tbody>
