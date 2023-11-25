@@ -7,23 +7,23 @@
     <div>
         <%- include ("templates/navbar.ejs")%>
     </div>
+
     <br>
     <br>
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h1 class="titulo-principal"><%= title %></h1>
+                <h1  class="titulo-principal"><%= title %></h1>
             </div>
             <div class="card-body">
 
-                <%- include ("templates/table.ejs", { data: data }) %>
-
+                
                 <br>
 
 
                 <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     onclick="newProduct()">
-                    Agregar nuevo producto
+                    Agregar nueva venta
                 </button>
 
                 <div id="popUp_modal">

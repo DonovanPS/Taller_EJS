@@ -1,10 +1,10 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background-color:#fcf4f5;
 }
 
 /*Estilos NavBar*/
 .navbar.bg-body-tertiary {
-    background-color: #ededed !important; 
+    background-color: #ffdadf !important; 
   }
 
     .navbar-nav {
@@ -17,6 +17,8 @@ body{
     .navbar-nav .nav-item {
       text-align: center;
       margin: 0 5px; 
+      font-family: "Gabriola", sans-serif; 
+      font-size: 25px
     }
   
     .navbar-nav .nav-item:nth-child(1) {
@@ -46,16 +48,27 @@ body{
         height: auto; 
       }
 
+      .navbar-brand{
+        margin-left: 60px;
+       
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: #ffcfd6;
+      }
+
       
 .custom-btn {
-  background-color: #ffa1ae; 
+  background-color: #feb8c1; 
   color: black;
   border-radius: 4px;
+  font-family: "Gabriola", sans-serif; 
+  text-align: center;
+  font-size: 25px
 }
 
 .custom-btn:hover {
-  background-color: #ededed;
-  color: #ffa1ae;
+  background-color: #fed4da;
 }
   
   
@@ -63,7 +76,8 @@ body{
 /*Estilos table*/
 
 #miTabla_wrapper {
-  font-size: 14px;
+  font-size: 25px;
+  font-family: "Gabriola", sans-serif; 
 }
 
 #miTabla th, #miTabla td {
@@ -80,4 +94,36 @@ body{
 #miTabla_paginate .paginate_button:hover {
   background-color: #007bff;
   color: #fff;
+}
+
+
+/*Estilos carrusel*/
+.carousel-item img {
+  max-width: 500px;
+  height: 500px;
+  max-height: 500px; 
+
+}
+
+.carousel-item img {
+  display: block;
+  margin: 0 auto; 
+}
+
+/*Estilos texto*/
+h3, p {
+  font-family: "Gabriola", sans-serif; 
+  text-align: center;
+  font-size: 25px
+}
+
+h3 {
+  font-size: 45px
+}
+
+.titulo-principal {
+  font-family: "Gabriola", sans-serif; 
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
 }

@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { findAll, save, update, deleteID } = require('../controllers/products');
 
 router.get("/", (req, res) => {
-    res.render('index', { title: "Gestión de Productos"});
+    res.render('index', { title: "Nala Beauty Distributions"});
 });
 
 
@@ -29,7 +29,24 @@ router.get("/product/form", (req, res) => {
 });
 
 
+//Rutas para ventas 
+router.get("/sale", (req, res) => {
+    try {
+        
+        const productsData = findAll();
 
+        
+        res.render('sale', { title: "Ventas", /*data: productsData.data*/ });
+    } catch (error) {
+        // Manejo de errores, por ejemplo, redirigir a una página de error
+        res.render('error', { title: "Error", error: "Error al obtener datos de las ventas" });
+    }
+});
+
+
+router.get("/sale/form", (req, res) => {
+    res.render('formProduct', { title: "Formulario de Ventas"});
+});
 
 
 
