@@ -15,12 +15,12 @@
             <td><%= value %></td>
             <% }); %>
             <td>
-                <button type="button" class="btn btn-info" onclick='editRow(<%- JSON.stringify(row) %>)'>
+                <button type="button" class="btn btn-info" onclick='editRow(<%- (JSON.stringify(row)) %>)'>
                     <i class="bi bi-pencil"></i>
                 </button>
             </td>
             <td>
-                <button type="button" class="btn btn-danger" onclick='deteleRow(<%- JSON.stringify(row.ID) %>)''>
+                <button type="button" class="btn btn-danger" onclick='deteleRow(<%- JSON.stringify(row.ID) %>)'>
                     <i class="bi bi-trash"></i>
                 </button>
             </td>
@@ -31,26 +31,3 @@
 
 
 
-<script>
-    $(document).ready(function () {
-        $('#miTabla').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-            },
-            pageLength: 5,
-            lengthMenu: [5, 10, 25],
-            "order": [],
-            "columnDefs": [{
-                    "targets": [0],
-                    "visible": false,
-                    "searchable": false
-                },{
-                    "targets": [-2, -1], 
-                    "orderable": false
-                }
-            ],
-
-
-        });
-    });
-</script>

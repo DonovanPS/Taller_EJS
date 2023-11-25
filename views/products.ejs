@@ -20,7 +20,6 @@
 
                 <br>
 
-
                 <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     onclick="newProduct()">
                     Agregar nuevo producto
@@ -36,7 +35,17 @@
 
 
     <script src="js/toast.js"></script>
+    <script src="js/products.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var array = JSON.parse('<%- JSON.stringify(data) %>');
+            console.log(array);
+          
+            startData((array))
+        });
+    </script>
+    
 
 </body>
 

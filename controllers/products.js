@@ -22,7 +22,7 @@ module.exports = {
             const data = fs.readFileSync(filePath, 'utf-8');
             const products = JSON.parse(data);
     
-            newProduct.ID = uuidv4();  // Genera un ID único
+            newProduct.ID = uuidv4();  
             products.push(newProduct);
 
             fs.writeFileSync(filePath, JSON.stringify(products, null, 2), 'utf-8');

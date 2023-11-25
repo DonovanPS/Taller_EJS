@@ -50,29 +50,36 @@ router.get("/sale/form", (req, res) => {
 
 
 
+
 router.post("/product", (req, res) => {
     try {
         
         const productsData = req.body;
 
-        // Validar la data antes de llamar a la función save
         const validationResult = isValidProduct(productsData);
 
         if (validationResult.isValid) {
             const saveResult = save(productsData);
 
             if (saveResult.state === "true") {
-                res.render('products', { title: "Productos", data: saveResult.data });
-            } else {
-                res.render('error', { title: "Error", error: saveResult.error });
-            }
+                data = saveResult.data;
+                toast = {
+                    "title": "Éxito",
+                    "msg": "Producto guardado correctamente",
+                    "type": "success"
+                }
+                res.status(200).send({"toast": toast, "data": data});
+            } 
         } else {
-            console.log(validationResult.error);
-            //res.render('error', { title: "Error de validación", error: validationResult.error });
+            toast = {
+                "title": "Error de validación",
+                "msg": validationResult.error,
+                "type": "error"
+            }
+            res.status(400).send({"toast":toast});
         }
     } catch (error) {
-        // Manejo de errores, por ejemplo, redirigir a una página de error
-        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+        res.status(500).send({"msg": "Error al obtener datos de productos", "error": error});
     }
 });
 
@@ -83,25 +90,32 @@ router.put("/product", (req, res) => {
         
         const productsData = req.body;
 
-        // Validar la data antes de llamar a la función save
         const validationResult = isValidProduct(productsData);
 
         if (validationResult.isValid) {
-            const saveResult = update(productsData);
+            const updateResult = update(productsData);
 
-            if (saveResult.state === "true") {
-                res.render('products', { title: "Productos", data: saveResult.data });
-            } else {
-                res.render('error', { title: "Error", error: saveResult.error });
-            }
+            if (updateResult.state === "true") {
+                data = updateResult.data;
+                toast = {
+                    "title": "Éxito",
+                    "msg": "Producto actualizado correctamente",
+                    "type": "success"
+                }
+                res.status(200).send({"toast": toast, "data": data});
+            } 
         } else {
-            console.log(validationResult.error);
-            //res.render('error', { title: "Error de validación", error: validationResult.error });
+            toast = {
+                "title": "Error de validación",
+                "msg": validationResult.error,
+                "type": "error"
+            }
+            res.status(400).send({"toast":toast});
         }
     } catch (error) {
-        // Manejo de errores, por ejemplo, redirigir a una página de error
-        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+        res.status(500).send({"msg": "Error al obtener datos de productos", "error": error});
     }
+        
    
 });
 
@@ -114,14 +128,17 @@ router.delete("/product", (req, res) => {
         const deleteResult = deleteID(ID);
 
         if (deleteResult.state === "true") {
-            res.render('products', { title: "Productos", data: deleteResult.data });
-        } else {
-            res.render('error', { title: "Error", error: deleteResult.error });
+            data = deleteResult.data;
+            toast = {
+                "title": "Éxito",
+                "msg": "Producto eliminado correctamente",
+                "type": "success"
+            }
+            res.status(200).send({"toast": toast, "data": data});
         }
 
     } catch (error) {
-        // Manejo de errores, por ejemplo, redirigir a una página de error
-        res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
+        res.status(500).send({"msg": "Error al obtener datos de productos", "error": error});   
     }
 });
 

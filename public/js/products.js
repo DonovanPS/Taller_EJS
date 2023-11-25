@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (validationResult.isValid) {
                 const method = buttonAction.textContent === "Guardar" ? 'POST' : 'PUT';
-                const url = buttonAction.textContent === "Guardar" ? '/product' : '/product';
+                const url = "/product"
 
                 sendToServer(method, url, data);
             } else {
@@ -40,51 +40,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
     function sendToServer(method, url, data) {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
         xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                $('#exampleModal').modal('hide');
-                const successMessage = buttonAction.textContent === "Guardar" ? 'Nuevo producto creado' :
-                    buttonAction.textContent === "Actualizar" ? 'Producto actualizado' : 'Producto eliminado';
-                mostrarToast('Éxito', successMessage, 3000, 'success', true);
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    const responseData = JSON.parse(this.responseText);
+                    console.log('Respuesta del servidor:', responseData);
+                    $('#exampleModal').modal('hide');
+                    toast = responseData.toast;
 
-                // Actualizar solo la tabla con AJAX
-                $.get('/product', function (data) {
-                    const tableFragment = $(data).find('.table');
-                    $('.table').html(tableFragment.html());
+                    mostrarToast(toast.title, toast.msg, 3000, toast.type, true);
 
-                    // Reinitializar DataTable
-                    $('#miTabla').DataTable().destroy();
-                    $('#miTabla').DataTable({
-                        "language": {
-                            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
-                        },
-                        "pageLength": 5,
-                        "lengthMenu": [5, 10, 25],
-                        "order": [],
-                        "columnDefs": [{
-                            "targets": [0],
-                            "visible": false,
-                            "searchable": false
-                        }, {
-                            "targets": [-2, -1],
-                            "orderable": false
-                        }],
-                    });
-                });
-
-                if (method !== 'DELETE') {
-                    clearForm();
+                    loadData(responseData.data);
+                    if (method !== 'DELETE') {
+                        clearForm();
+                    }
+                } else {
+                    const errorMessage = 'Error en la operación';
+                    console.error(errorMessage, this.status, this.statusText);
+                    mostrarToast('Error', errorMessage, 3000, 'error', true);
                 }
-
             }
         };
 
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(data));
     }
+
+
 
     const isValidProduct = (product) => {
         const requiredFields = ["Nombre", "Cantidad", "Precio", "Descripcion", "Categoria"];
@@ -108,6 +94,8 @@ function newProduct() {
 }
 
 function editRow(rowData) {
+    rowData = JSON.parse(decodeURIComponent(rowData));
+    console.log(rowData);
     const serverPath = "/product/form";
     $('#exampleModal').find('.modal-title').text('Editar producto');
     $('#exampleModal').find('.modal-body').load(serverPath, function () {
@@ -139,3 +127,80 @@ function clearForm() {
     document.getElementById("descripcion").value = "";
     document.getElementById("categoria").value = "";
 }
+
+function startData(data) {
+    console.log("loadDataaaa");
+
+    console.log(data);
+
+    var table = $('#miTabla').DataTable({
+        "data": data,
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+        },
+        pageLength: 5,
+        lengthMenu: [5, 10, 25],
+        "order": [],
+        "columnDefs": [
+            { "targets": [0], "visible": false, "searchable": false },  // Oculta la primera columna (ID)
+            { "targets": [-2, -1], "orderable": false }  // Hace que las dos últimas columnas no sean ordenables
+        ],
+        "columns": [
+            { "data": "ID" },
+            { "data": "Nombre" },
+            { "data": "Descripcion" },
+            { "data": "Categoria" },
+            { "data": "Cantidad" },
+            { "data": "Precio" },
+            {
+                "data": null,
+                "render": function (data, type, row) {
+                    return '<button type="button" class="btn btn-info" onclick="editRow(\'' + encodeURIComponent(JSON.stringify(row)) + '\')"><i class="bi bi-pencil"></i></button>';
+                }
+            },
+            {
+                "data": null,
+                "render": function (data, type, row) {
+                    return '<button type="button" class="btn btn-danger" onclick="deteleRow(\'' + encodeURIComponent(JSON.stringify(row.ID)) + '\')"><i class="bi bi-trash"></i></button>';
+                }
+            }
+        ]
+    });
+
+    // Vuelve a dibujar la tabla
+    table.draw();
+}
+
+
+
+  
+function loadData(data) {
+    console.log("loadData");
+
+    console.log(data);
+
+    var table = $('#miTabla').DataTable();
+
+    // Limpia la tabla
+    table.clear();
+
+    for (var i = 0; i < data.length; i++) {
+        var rowData = {
+            "ID": data[i].ID,
+            "Nombre": data[i].Nombre,
+            "Descripcion": data[i].Descripcion,
+            "Categoria": data[i].Categoria,
+            "Cantidad": data[i].Cantidad,
+            "Precio": data[i].Precio
+          
+        };
+        table.row.add(rowData);
+        
+    }
+
+    // Vuelve a inicializar DataTable
+    table.draw();
+
+    
+}
+
