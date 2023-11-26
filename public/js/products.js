@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     const responseData = JSON.parse(this.responseText);
-                    console.log('Respuesta del servidor:', responseData);
+                
                     $('#exampleModal').modal('hide');
                     toast = responseData.toast;
 
@@ -103,7 +103,7 @@ function newProduct() {
 
 function editRow(rowData) {
     rowData = JSON.parse(decodeURIComponent(rowData));
-    console.log(rowData);
+   
     const serverPath = "/product/form";
     $('#exampleModal').find('.modal-title').text('Editar producto');
     $('#exampleModal').find('.modal-body').load(serverPath, function () {
@@ -137,9 +137,7 @@ function clearForm() {
 }
 
 function startData(data) {
-    console.log("loadDataaaa");
-
-    console.log(data);
+   
 
     var table = $('#miTabla').DataTable({
         "data": data,
@@ -175,7 +173,6 @@ function startData(data) {
         ]
     });
 
-    // Vuelve a dibujar la tabla
     table.draw();
 }
 
@@ -183,10 +180,7 @@ function startData(data) {
 
   
 function loadData(data) {
-    console.log("loadData");
-
-    console.log(data);
-
+   
     var table = $('#miTabla').DataTable();
 
     // Limpia la tabla

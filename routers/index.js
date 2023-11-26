@@ -17,7 +17,7 @@ router.get("/product", (req, res) => {
         
         res.render('products', { title: "Productos", data: productsData.data });
     } catch (error) {
-        // Manejo de errores, por ejemplo, redirigir a una página de error
+       
         res.render('error', { title: "Error", error: "Error al obtener datos de productos" });
     }
 });

@@ -13,11 +13,12 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h1  class="titulo-principal"><%= title %></h1>
+                <h1 class="titulo-principal"><%= title %></h1>
             </div>
             <div class="card-body">
 
-                
+                <%- include ("templates/table.ejs", { data: data }) %>
+
                 <br>
 
 
@@ -27,7 +28,7 @@
                 </button>
 
                 <div id="popUp_modal">
-                    <%- include ("templates/popUp.ejs", { modalTitle: 'Agregar nueva venta', modalContent: 'formSale.ejs' , button: 'Guardar', script: 'nombreSccript' })%>
+                    <%- include ("templates/popUp.ejs", { modalTitle: 'Agregar nueva venta', modalContent: 'formSale.ejs' , button: 'Guardar', formData: encodeURIComponent(JSON.stringify(formData))  })%>
                 </div>
 
             </div>
@@ -35,10 +36,20 @@
     </div>
 
 
+  
+
+
     <script src="js/toast.js"></script>
     <script src="js/sales.js"></script>
-    
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var array = JSON.parse('<%- JSON.stringify(data) %>');
+          
+            startData((array))
+        });
+    </script>
 
 </body>
 

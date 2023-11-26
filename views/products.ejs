@@ -26,7 +26,7 @@
                 </button>
 
                 <div id="popUp_modal">
-                    <%- include ("templates/popUp.ejs", { modalTitle: 'Agregar nuevo producto', modalContent: 'formProduct.ejs' , button: 'Guardar', script: 'nombreSccript' })%>
+                    <%- include ("templates/popUp.ejs", { modalTitle: 'Agregar nuevo producto', modalContent: 'formProduct.ejs' , button: 'Guardar',formData:'' })%>
                 </div>
 
             </div>
@@ -40,7 +40,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var array = JSON.parse('<%- JSON.stringify(data) %>');
-            console.log(array);
           
             startData((array))
         });

@@ -1,0 +1,42 @@
+[
+  {
+    "ID": "83a23623-5fa2-4d71-8658-ac392655278c",
+    "Fecha": "2021-01-01",
+    "Cliente": "Juan Perez",
+    "Producto_ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
+    "NombreProducto": "Crema Hidratante de Lujoaaa",
+    "Cantidad": "100",
+    "Unitario": "25.99",
+    "Total": "2599.00"
+  },
+  {
+    "ID": "f24151f3-6d06-46d8-82ac-84fb200ed24d",
+    "Fecha": "2023-11-23",
+    "Cliente": "as",
+    "Producto_ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
+    "NombreProducto": "Base de Maquillaje Radiantea",
+    "Cantidad": "5",
+    "Unitario": "29.99",
+    "Total": "149.95"
+  },
+  {
+    "ID": "bf082a36-280c-44fc-b84c-4d03d72a520d",
+    "Fecha": "2023-11-29",
+    "Cliente": "1212121",
+    "Producto_ID": "83a23623-5fa2-4d71-8658-ac392655478c",
+    "NombreProducto": "Crema Hidratante de Lujo",
+    "Cantidad": "2",
+    "Unitario": "25.99",
+    "Total": "51.98"
+  },
+  {
+    "ID": "e5db33bf-2f4e-49b8-b937-d9b0bb3a37f0",
+    "Fecha": "2023-11-27",
+    "Cliente": "2",
+    "Producto_ID": "de33f324-634d-4f5f-81ed-f4fa857ecf11",
+    "NombreProducto": "Set de Aromaterapia con Aceites Esenciales",
+    "Cantidad": "3",
+    "Unitario": "32.5",
+    "Total": "97.50"
+  }
+]

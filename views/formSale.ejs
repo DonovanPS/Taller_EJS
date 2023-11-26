@@ -8,20 +8,18 @@
 
   <div class="form-group">
     <label for="nombreCliente">Nombre del Cliente:</label>
-    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente">
+    <input type="text" class="form-control" id="cliente" name="nombreCliente">
   </div>
 
   <div class="form-group">
-    <label for="direccionCliente">Dirección del Cliente:</label>
-    <input type="text" class="form-control" id="direccionCliente" name="direccionCliente">
-  </div>
-
-  <div class="form-group">
-    <label for="producto">Producto:</label>
+    <label for="producto">Producto</label>
     <select class="form-control" id="producto" name="producto">
-      <!-- Opciones de productos se cargarán dinámicamente -->
+      <option value="">Seleccione...</option>
+
     </select>
   </div>
+
+
 
   <div class="form-group">
     <label for="cantidad">Cantidad:</label>
@@ -30,7 +28,7 @@
 
   <div class="form-group">
     <label for="precioUnitario">Precio Unitario:</label>
-    <input type="number" class="form-control" id="precioUnitario" name="precioUnitario" disabled>
+    <input type="number" class="form-control" id="Unitario" name="precioUnitario" disabled>
   </div>
 
   <div class="form-group">
@@ -41,3 +39,16 @@
   <br>
 </form>
 
+<script>
+  var decodedFormData = JSON.parse(decodeURIComponent("<%- formData %>"));
+  var selectElement = document.getElementById("producto");
+
+ 
+  decodedFormData.forEach(function (item) {
+    var option = document.createElement("option");
+    option.value = item.ID;
+    option.setAttribute("data-precio", item.Precio);
+    option.text = item.Nombre;
+    selectElement.appendChild(option);
+  });
+</script>

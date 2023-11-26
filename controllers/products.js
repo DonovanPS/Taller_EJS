@@ -58,5 +58,23 @@ module.exports = {
         } catch (error) {
             return { "state": "false", "error": error };
         }
+    },
+    findByID: (id) => {
+        try {
+
+           
+            const data = fs.readFileSync(filePath, 'utf-8');
+            const products = JSON.parse(data);
+
+            const product = products.find((p) => p.ID === id);
+
+        
+        
+
+            return { "state": "true", "data": product };
+        } catch (error) {
+           
+            return { "state": "false", "error": error };
+        }
     }
 };
