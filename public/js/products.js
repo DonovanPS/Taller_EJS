@@ -81,6 +81,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        if(product.Cantidad < 0){
+            return { isValid: false, error: `La cantidad no puede ser negativa.` };
+        }
+
+        if(product.Precio < 0){
+            return { isValid: false, error: `El precio no puede ser negativo.` };
+        }
+
         return { isValid: true };
     };
 });

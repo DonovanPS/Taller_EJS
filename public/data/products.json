@@ -1,22 +1,22 @@
 [
   {
-    "ID": 1,
+    "ID": "83a23623-5fa2-4d71-8658-ac392655478c",
     "Nombre": "Crema Hidratante de Lujo",
     "Descripcion": "Una lujosa crema hidratante para una piel suave como la seda.",
     "Categoria": "Cuidado de la Piel",
-    "Cantidad": 100,
-    "Precio": 25.99
+    "Cantidad": "100",
+    "Precio": "25.99"
   },
   {
-    "ID": 2,
-    "Nombre": "Base de Maquillaje Radiante",
+    "ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
+    "Nombre": "Base de Maquillaje Radiantea",
     "Descripcion": "Logra un cutis natural y radiante con esta base de maquillaje.",
     "Categoria": "Maquillaje",
-    "Cantidad": 50,
-    "Precio": 29.99
+    "Cantidad": "50",
+    "Precio": "29.99"
   },
   {
-    "ID": 3,
+    "ID": "db34f054-581a-4d23-9261-b96ec1cca264",
     "Nombre": "Serum Revitalizante para el Cabello",
     "Descripcion": "Serum nutritivo para un cabello brillante y revitalizado.",
     "Categoria": "Cuidado del Cabello",
@@ -24,7 +24,7 @@
     "Precio": 18.5
   },
   {
-    "ID": 4,
+    "ID": "380830f9-1acd-4caa-8fc9-e304b8841cad",
     "Nombre": "Loción Corporal Calmante de Lavanda",
     "Descripcion": "Loción corporal suave con el relajante aroma de la lavanda.",
     "Categoria": "Cuidado Corporal",
@@ -32,171 +32,19 @@
     "Precio": 14.99
   },
   {
-    "ID": 5,
+    "ID": "de33f324-634d-4f5f-81ed-f4fa857ecf11",
     "Nombre": "Set de Aromaterapia con Aceites Esenciales",
     "Descripcion": "Un set de aceites esenciales para una experiencia relajante de aromaterapia.",
     "Categoria": "Bienestar",
-    "Cantidad": 20,
-    "Precio": 32.5
+    "Cantidad": "20",
+    "Precio": "32.5"
   },
   {
-    "ID": "40c27fbf-bc8d-4bcd-822e-1e937bd934d3",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "5"
-  },
-  {
-    "ID": "75d60f1d-9b85-4dce-9157-9664701f1096",
-    "Nombre": "1",
-    "Descripcion": "23",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "5"
-  },
-  {
-    "ID": "5320c648-2805-4d43-bc02-d37932b99534",
-    "Nombre": "12",
-    "Descripcion": "22",
-    "Categoria": "2",
-    "Cantidad": "2",
-    "Precio": "2"
-  },
-  {
-    "ID": "90457ac1-f7e4-426e-9d09-a1ce0cbc1e58",
-    "Nombre": "6",
-    "Descripcion": "6",
-    "Categoria": "6",
-    "Cantidad": "6",
-    "Precio": "6"
-  },
-  {
-    "ID": "67c9f017-cfb4-409d-b885-ad3af3510e4b",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "5"
-  },
-  {
-    "ID": "526ee46d-26cf-4f3c-beb1-99e3f227dcf6",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "5"
-  },
-  {
-    "ID": "88ebb921-1cb7-4c81-a731-b42bbdc0e166",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "55555555555555"
-  },
-  {
-    "ID": "8c8fa179-024c-42c7-a675-92a699382ca3",
-    "Nombre": "7",
-    "Descripcion": "7",
-    "Categoria": "7",
-    "Cantidad": "7",
-    "Precio": "7"
-  },
-  {
-    "ID": "d490c335-9945-41be-9bd8-aff423898eef",
-    "Nombre": "2",
-    "Descripcion": "2",
-    "Categoria": "2",
-    "Cantidad": "2",
-    "Precio": "2"
-  },
-  {
-    "ID": "91509053-d36b-4a67-bd44-fae177beb9e0",
-    "Nombre": "0",
-    "Descripcion": "0",
-    "Categoria": "0",
-    "Cantidad": "0",
-    "Precio": "0"
-  },
-  {
-    "ID": "de33f324-634d-4f5f-81ed-f4fa857ecf11",
-    "Nombre": "Set de Aromaterapia con Aceites Esenciales",
-    "Cantidad": 2022,
-    "Precio": 32.5,
-    "Descripcion": "Un set de aceites esenciales para una experiencia relajante de aromaterapia.",
-    "Categoria": "Bienestar"
-  },
-  {
-    "ID": "380830f9-1acd-4caa-8fc9-e304b8841cad",
-    "Nombre": "3",
-    "Descripcion": "3",
-    "Categoria": "3",
-    "Cantidad": "3",
-    "Precio": "3"
-  },
-  {
-    "ID": "db34f054-581a-4d23-9261-b96ec1cca264",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "5"
-  },
-  {
-    "ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
-    "Nombre": "8",
-    "Descripcion": "8",
-    "Categoria": "8",
-    "Cantidad": "8",
-    "Precio": "8"
-  },
-  {
-    "ID": "83a23623-5fa2-4d71-8658-ac392655478c",
-    "Nombre": "8",
-    "Descripcion": "8",
-    "Categoria": "7",
-    "Cantidad": "7",
-    "Precio": "7"
-  },
-  {
-    "ID": "8655871e-92e8-4433-b3e1-e15a8c3710b3",
+    "ID": "b96f2f76-ec6e-48a0-b08f-5150c6a03083",
     "Nombre": "1",
     "Descripcion": "1",
     "Categoria": "1",
-    "Cantidad": "1",
-    "Precio": "1"
-  },
-  {
-    "ID": "d2025de8-d5bb-4e06-9829-55fe14b74021",
-    "Nombre": "1",
-    "Descripcion": "2",
-    "Categoria": "3",
-    "Cantidad": "4",
-    "Precio": "53333333"
-  },
-  {
-    "ID": "de8b22f2-04bc-48e6-b629-68dd91100679",
-    "Nombre": "4",
-    "Descripcion": "5",
-    "Categoria": "6",
-    "Cantidad": "7",
-    "Precio": "8"
-  },
-  {
-    "ID": "de3193a8-5a91-47e3-a955-2ac0cf3aa3e8",
-    "Nombre": "41412412",
-    "Descripcion": "5",
-    "Categoria": "5",
-    "Cantidad": "5",
-    "Precio": "8"
-  },
-  {
-    "ID": "5d0ee964-33d6-4c16-9256-1e96e0d8cd07",
-    "Nombre": "1",
-    "Descripcion": "3",
-    "Categoria": "4",
-    "Cantidad": "5",
-    "Precio": "6"
+    "Cantidad": "567567",
+    "Precio": "0"
   }
 ]
