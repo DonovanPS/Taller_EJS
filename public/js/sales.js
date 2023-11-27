@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var cantidad = parseFloat(inputCantidad.value) || 0;
         var precioUnitario = parseFloat(inputPrecioUnitario.value) || 0;
         var total = cantidad * precioUnitario;
-        inputTotal.value = total.toFixed(2);
+        inputTotal.value = total.toFixed(3);
     }
 });
 

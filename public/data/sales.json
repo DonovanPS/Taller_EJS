@@ -1,82 +1,42 @@
 [
   {
-    "ID": "3a832c83-e10a-4905-8be3-0f8dbd63627d",
-    "Fecha": "26/11/2023, 20:20:52",
-    "Cliente": "1",
+    "ID": "a6edc86c-14bf-4e21-9846-3d163eebdd74",
+    "Fecha": "26/11/2023, 9:03:18 p. m.",
+    "Cliente": "Andres Leal",
     "Producto_ID": "83a23623-5fa2-4d71-8658-ac392655478c",
     "NombreProducto": "Crema Hidratante de Lujo",
-    "Cantidad": "2",
-    "Unitario": "25.99",
-    "Total": "51.98"
+    "Cantidad": "6",
+    "Unitario": "23.500",
+    "Total": "141.000"
   },
   {
-    "ID": "fd3ead81-0059-4c89-b9eb-18b773f223b7",
-    "Fecha": "26/11/2023, 20:22:01",
-    "Cliente": "Juan perez",
+    "ID": "1b537dd2-aadd-41db-879c-24074522ffb8",
+    "Fecha": "26/11/2023, 9:03:49 p. m.",
+    "Cliente": "Juan Perez",
     "Producto_ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
-    "NombreProducto": "Base de Maquillaje Radiantea",
+    "NombreProducto": "Base de Maquillaje Radiante",
     "Cantidad": "2",
-    "Unitario": "29.99",
-    "Total": "59.98"
+    "Unitario": "98.430",
+    "Total": "196.860"
   },
   {
-    "ID": "ee1e5297-fed4-4908-b4e3-0610b1429e8f",
-    "Fecha": "26/11/2023, 20:22:07",
-    "Cliente": "Juan perez",
-    "Producto_ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
-    "NombreProducto": "Base de Maquillaje Radiantea",
-    "Cantidad": "2",
-    "Unitario": "29.99",
-    "Total": "59.98"
-  },
-  {
-    "ID": "001697de-1ebd-430a-86db-47e1eb4a30c5",
-    "Fecha": "26/11/2023, 20:24:35",
-    "Cliente": "Camilo",
-    "Producto_ID": "db34f054-581a-4d23-9261-b96ec1cca264",
-    "NombreProducto": "Serum Revitalizante para el Cabello",
-    "Cantidad": "1",
-    "Unitario": "18.5",
-    "Total": "18.50"
-  },
-  {
-    "ID": "d617fd46-9905-405c-a963-971a9762afdd",
-    "Fecha": "26/11/2023, 20:26:58",
-    "Cliente": "Andres",
+    "ID": "a913cc9a-819c-4d3a-95a2-b3314a057c8c",
+    "Fecha": "26/11/2023, 9:04:52 p. m.",
+    "Cliente": "Lucia Vargas",
     "Producto_ID": "de33f324-634d-4f5f-81ed-f4fa857ecf11",
     "NombreProducto": "Set de Aromaterapia con Aceites Esenciales",
     "Cantidad": "1",
-    "Unitario": "32.5",
-    "Total": "32.50"
+    "Unitario": "104.560",
+    "Total": "104.560"
   },
   {
-    "ID": "49f5f421-7b6e-4d78-8cb8-c3b987a9d97a",
-    "Fecha": "26/11/2023, 20:28:55",
-    "Cliente": "Juan",
-    "Producto_ID": "db34f054-581a-4d23-9261-b96ec1cca264",
-    "NombreProducto": "Serum Revitalizante para el Cabello",
-    "Cantidad": "2",
-    "Unitario": "18.5",
-    "Total": "37.00"
-  },
-  {
-    "ID": "13657971-2217-4778-b887-56202affd27c",
-    "Fecha": "26/11/2023, 20:30:00",
-    "Cliente": "Pedro",
+    "ID": "8a05a168-d252-4a7f-8856-d439382cdb93",
+    "Fecha": "26/11/2023, 9:06:37 p. m.",
+    "Cliente": "Angie Barrera",
     "Producto_ID": "380830f9-1acd-4caa-8fc9-e304b8841cad",
     "NombreProducto": "Loción Corporal Calmante de Lavanda",
     "Cantidad": "2",
-    "Unitario": "14.99",
-    "Total": "29.98"
-  },
-  {
-    "ID": "4a5c4ade-83dc-42d4-9239-439e1f3bdf86",
-    "Fecha": "26/11/2023, 20:32:58",
-    "Cliente": "Pepito",
-    "Producto_ID": "db34f054-581a-4d23-9261-b96ec1cca264",
-    "NombreProducto": "Serum Revitalizante para el Cabello",
-    "Cantidad": "2",
-    "Unitario": "18.5",
-    "Total": "37.00"
+    "Unitario": "68.430",
+    "Total": "136.860"
   }
 ]

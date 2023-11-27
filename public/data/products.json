@@ -4,39 +4,39 @@
     "Nombre": "Crema Hidratante de Lujo",
     "Descripcion": "Una lujosa crema hidratante para una piel suave como la seda.",
     "Categoria": "Cuidado de la Piel",
-    "Cantidad": 86,
-    "Precio": "25.99"
+    "Cantidad": 76,
+    "Precio": "23.500"
   },
   {
     "ID": "5ef72160-cd9c-4258-8b98-59bc7d4d9115",
-    "Nombre": "Base de Maquillaje Radiantea",
+    "Nombre": "Base de Maquillaje Radiante",
     "Descripcion": "Logra un cutis natural y radiante con esta base de maquillaje.",
     "Categoria": "Maquillaje",
-    "Cantidad": 57,
-    "Precio": "29.99"
+    "Cantidad": 55,
+    "Precio": "98.430"
   },
   {
     "ID": "db34f054-581a-4d23-9261-b96ec1cca264",
     "Nombre": "Serum Revitalizante para el Cabello",
     "Descripcion": "Serum nutritivo para un cabello brillante y revitalizado.",
     "Categoria": "Cuidado del Cabello",
-    "Cantidad": 70,
-    "Precio": 18.5
+    "Cantidad": "70",
+    "Precio": "60.800"
   },
   {
     "ID": "380830f9-1acd-4caa-8fc9-e304b8841cad",
     "Nombre": "Loción Corporal Calmante de Lavanda",
     "Descripcion": "Loción corporal suave con el relajante aroma de la lavanda.",
     "Categoria": "Cuidado Corporal",
-    "Cantidad": 78,
-    "Precio": 14.99
+    "Cantidad": 76,
+    "Precio": "68.430"
   },
   {
     "ID": "de33f324-634d-4f5f-81ed-f4fa857ecf11",
     "Nombre": "Set de Aromaterapia con Aceites Esenciales",
     "Descripcion": "Un set de aceites esenciales para una experiencia relajante de aromaterapia.",
     "Categoria": "Bienestar",
-    "Cantidad": 19,
-    "Precio": "32.5"
+    "Cantidad": 18,
+    "Precio": "104.560"
   }
 ]
