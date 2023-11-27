@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonAction.addEventListener("click", () => {
         if (buttonAction.textContent === "Guardar") {
             const ID = document.getElementById("ID").value;
-            const fecha = document.getElementById("fecha").value;
+            //const fecha = document.getElementById("fecha").value;
             const cliente = document.getElementById("cliente").value;
             const producto_id = document.getElementById("producto").value;
             const nombreProducto = document.getElementById("producto").options[document.getElementById("producto").selectedIndex].text;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const data = {
                 "ID": ID,
-                "Fecha": fecha,
+                "Fecha": new Date().toLocaleString(),
                 "Cliente": cliente,
                 "Producto_ID": producto_id,
                 "NombreProducto": nombreProducto,
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Total": total
             };
 
-           
+
 
             const validationResult = isValidProduct(data);
 
@@ -55,18 +55,24 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     const responseData = JSON.parse(this.responseText);
+
                    
-                    $('#exampleModal').modal('hide');
+                    if (responseData.toast.type === "success") {
+                        $('#exampleModal').modal('hide');
+                        clearForm();
+                        loadData(responseData.data);
+                    }
+
                     toast = responseData.toast;
 
                     mostrarToast(toast.title, toast.msg, 3000, toast.type, true);
 
-                    loadData(responseData.data);
-                    if (method !== 'DELETE') {
-                        clearForm();
-                    }
+                   
+                    
                 } else {
-                    const errorMessage = 'Error en la operación';
+                    const msg = JSON.parse(this.responseText).msg;
+
+                    const errorMessage = 'Error en la operación' + msg;
                     console.error(errorMessage, this.status, this.statusText);
                     mostrarToast('Error', errorMessage, 3000, 'error', true);
                 }
@@ -80,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const isValidProduct = (product) => {
-        const requiredFields = ["NombreProducto","Fecha", "Cliente",  "Cantidad", "Unitario"];
-        
+        const requiredFields = ["NombreProducto", "Fecha", "Cliente", "Cantidad", "Unitario"];
+
         for (const field of requiredFields) {
             if (!(field in product) || product[field] === "") {
                 return { isValid: false, error: `Campo "${field}" es requerido y no puede estar vacío.` };
@@ -92,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return { isValid: false, error: `La cantidad no puede ser negativa.` };
         }
 
-      
 
         return { isValid: true };
     };
@@ -141,7 +146,7 @@ function startData(data) {
         lengthMenu: [5, 10, 25],
         "order": [],
         "columnDefs": [
-            { "targets": [0, 1, 2, -2,-1], "visible": false, "searchable": false },  // Oculta la primera columna (ID)
+            { "targets": [0, 1, 2, -2, -1], "visible": false, "searchable": false },  // Oculta la primera columna (ID)
             { "targets": [-2, -1], "orderable": false }  // Hace que las dos últimas columnas no sean ordenables
         ],
         "columns": [
@@ -156,11 +161,11 @@ function startData(data) {
             { "data": "Total" },
             {
                 "data": null,
-               
+
             },
             {
                 "data": null,
-                
+
             }
         ]
     });
@@ -169,14 +174,14 @@ function startData(data) {
 }
 
 
-function loadData(data){
+function loadData(data) {
 
-  
+
     var table = $('#miTabla').DataTable();
 
     table.clear();
-    
-    for (var i = 0; i < data.length; i++){
+
+    for (var i = 0; i < data.length; i++) {
         var rowData = {
             "ID": data[i].ID,
             "Producto_ID": data[i].Producto_ID,
@@ -197,12 +202,11 @@ function loadData(data){
 function clearForm() {
 
     document.getElementById("ID").value = "";
-    document.getElementById("fecha").value = "";
     document.getElementById("cliente").value = "";
     document.getElementById("producto").value = "";
     document.getElementById("cantidad").value = "";
     document.getElementById("Unitario").value = "";
     document.getElementById("total").value = "";
 
-    
+
 }

@@ -20,8 +20,12 @@ router.post("/", (req, res) => {
 
         const validationResult = isValidSale(sale);
 
+       
+
         if (validationResult.isValid) {
             const saveResult = save(sale);
+
+           
 
             if (saveResult.state === "true") {
                 data = saveResult.data;
@@ -31,14 +35,22 @@ router.post("/", (req, res) => {
                     "type": "success"
                 }
                 res.status(200).send({"toast": toast, "data": data});
+            }else{
+                toast = {
+                    "title": "Error de validación",
+                    "msg": saveResult.error,
+                    "type": "error"
+                }
+                res.status(200).send({"toast":toast});
             } 
         } else {
+           
             toast = {
                 "title": "Error de validación",
                 "msg": validationResult.error,
                 "type": "error"
             }
-            res.status(400).send({"toast":toast});
+            res.status(200).send({"toast":toast});
         }
 
 

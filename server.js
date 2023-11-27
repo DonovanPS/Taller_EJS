@@ -15,11 +15,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({extended: true}))
 app.use("/", require('./routers/index.js'));  
 
-app.use("/products", require('./routers/index.js'));
+app.use("/product", require('./routers/products.js'));
 
 app.use("/sales", require('./routers/sales.js'));
 
-app.use("/api/products", require('./routers/products.js'));
 
 
 

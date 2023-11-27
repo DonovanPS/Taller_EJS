@@ -76,5 +76,23 @@ module.exports = {
            
             return { "state": "false", "error": error };
         }
+    },
+    discount: (id, quantity) => {
+        try {
+            const data = fs.readFileSync(filePath, 'utf-8');
+            const products = JSON.parse(data);
+
+            const product = products.find((p) => p.ID === id);
+
+            if (product.Cantidad < quantity) {
+                return { "state": "false", "error": "Error en las cantidades, cantidad maxima: "+product.Cantidad };
+            } else {
+                product.Cantidad = product.Cantidad - quantity;
+                fs.writeFileSync(filePath, JSON.stringify(products, null, 2), 'utf-8');
+                return { "state": "true", "data": products };
+            }
+        } catch (error) {
+            return { "state": "false", "error": error };
+        }
     }
 };
